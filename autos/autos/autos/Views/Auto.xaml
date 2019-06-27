@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="autos.Views.Auto">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                Text="Ingrese auto">
+                
+            </Label>
+            <Entry
+                Placeholder="ingrese auto"
+                >
+            </Entry>
+            <Label
+                Text="ingrese color">
+                
+            </Label>
+            <Entry
+                Placeholder="ingrese color">
+                
+            </Entry>
+            <Button x:Name="BInsert"
+                    Text="Insertar Venta"
+                    Clicked="BInsert_Clicked"/>
+            <Button x:Name="BListar"
+                    Text="Listar Ventas"
+                    Clicked="BListar_Clicked"/>
+            <ListView x:Name="listaventas">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding Auto}"/>
+                                <Label Grid.Column="1"
+                                       Text="{Binding Color}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
